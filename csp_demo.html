@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- CSP: тек өз доменіміздегі скриптерге рұқсат. Ішкі (inline) скрипт бұғатталады -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+  <title>CSP демонстрациясы</title>
+</head>
+<body>
+  <h1>CSP демонстрациясы</h1>
+  <p id="status">Скрипт орындалмады (CSP бұғаттады).</p>
+  <!-- XSS арқылы енгізілген скриптті модельдейді: CSP болмаса, мәтін өзгерер еді -->
+  <script>
+    document.getElementById("status").textContent = "Inline скрипт орындалды (CSP жоқ!)";
+  </script>
+</body>
+</html>
